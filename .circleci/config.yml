@@ -27,6 +27,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: php -m | grep xdebug
+
       - run: composer install -n --prefer-dist
 
       - save_cache:
@@ -35,4 +37,8 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run tests!
-      - run: ./phpunit
+      - run: vendor/bin/phpunit -c phpunit.xml
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
