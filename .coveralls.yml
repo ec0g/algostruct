@@ -1,0 +1,2 @@
+# clover
+coverage_clover: tests/_reports/logs/clover.xml
