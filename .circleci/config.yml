@@ -29,8 +29,8 @@ jobs:
 
       # install composer dependencies
       - run:
-        name: Install composer dependencies
-        command: composer install -n --prefer-dist
+          name: Install composer dependencies
+          command: composer install -n --prefer-dist
 
       - save_cache:
           paths:
@@ -39,8 +39,8 @@ jobs:
 
       # run tests!
       - run:
-        name: Run PHPUnit tests
-        command: vendor/bin/phpunit tests/
+          name: Run PHPUnit tests
+          command: vendor/bin/phpunit tests/
 
 notify:
   webhooks:
