@@ -12,6 +12,6 @@ The documentation is in progress...
 
 # Table of contents
 
-###Trees
+### Trees
   * Binary Search Trees (**BST**)
   * Red Black Trees (**RBT**)
