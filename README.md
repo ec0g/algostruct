@@ -1,6 +1,5 @@
 [![CircleCI](https://circleci.com/gh/ec0g/algostruct.svg?style=shield&circle-token=19c38705ae6481d06fe7ef0f6f4b2da4bef9ffbe)](https://circleci.com/gh/ec0g/algostruct)
-[![Coverage Status](https://coveralls.io/repos/github/ec0g/algostruct/badge.svg)](https://coveralls.io/github/ec0g/algostruct)
-
+[![Coverage Status](https://coveralls.io/repos/github/ec0g/algostruct/badge.svg?branch=master)](https://coveralls.io/github/ec0g/algostruct?branch=master)
 
 # algostruct
 A package of algorithms and data structures written in PHP. 
