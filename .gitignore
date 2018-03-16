@@ -1,3 +1,6 @@
 # composer dependencies
 vendor
 tests/_reports
+
+# ignore php files
+test.php
