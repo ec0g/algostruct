@@ -3,20 +3,24 @@
 namespace AlgoStruct\Tree\Node;
 
 
-interface NodeInterface {
+interface NodeInterface
+{
 
-  public static function create();
+    public static function create();
 
-  /**
-   * @return mixed
-   */
-  public function getValue();
+    /**
+     * @return mixed
+     */
+    public function getValue();
 
-  /**
-   * @param mixed $value
-   *
-   * @return \AlgoStruct\Tree\Node\NodeInterface
-   */
-  public function setValue($value);
+    /**
+     * @param mixed $value
+     */
+    public function setValue($value);
+
+    /**
+     * @return string
+     */
+    public function __toString(): string;
 
 }

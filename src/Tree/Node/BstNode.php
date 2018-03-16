@@ -1,73 +1,106 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AlgoStruct\Tree\Node;
 
-class BstNode implements BinaryNodeInterface {
+class BstNode implements BinaryNodeInterface
+{
 
-  protected $val;
+    protected $val;
 
-  /** @var NodeInterface */
-  protected $parent;
+    /** @var \AlgoStruct\Tree\Node\BinaryNodeInterface */
+    protected $parent;
 
-  /** @var \AlgoStruct\Tree\Node\BinaryNodeInterface */
-  protected $left;
+    /** @var \AlgoStruct\Tree\Node\BinaryNodeInterface */
+    protected $left;
 
-  /** @var \AlgoStruct\Tree\Node\BinaryNodeInterface */
-  protected $right;
+    /** @var \AlgoStruct\Tree\Node\BinaryNodeInterface */
+    protected $right;
 
-  public function __construct() {
-    $this->val = NULL;
-    $this->left = $this->right = NULL;
+    public function __construct()
+    {
+        $this->val = null;
+        $this->left = null;
+        $this->right = null;
+        $this->parent = null;
 
-  }
+    }
 
-  public static function create(): BinaryNodeInterface {
-    return new static();
-  }
+    public static function create(): BinaryNodeInterface
+    {
+        return new static();
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getValue() {
-    return $this->val;
-  }
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->val;
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function setValue($value) {
-    $this->val = $value;
+    /**
+     * {@inheritdoc}
+     */
+    public function getParent(): ?BinaryNodeInterface
+    {
+        return $this->parent;
+    }
 
-    return $this;
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public function setParent(BinaryNodeInterface &$node = null): BinaryNodeInterface
+    {
+        $this->parent = $node;
+        return $this;
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getLeft(): ?BinaryNodeInterface {
-    return $this->left;
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public function setValue($value): BstNode
+    {
+        $this->val = $value;
 
-  /**
-   * {@inheritdoc}
-   */
-  public function setLeft(BinaryNodeInterface $left): BinaryNodeInterface {
-    $this->left = $left;
-    return $this;
-  }
+        return $this;
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getRight(): ?BinaryNodeInterface {
-    return $this->right;
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public function getLeft(): ?BinaryNodeInterface
+    {
+        return $this->left;
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function setRight(BinaryNodeInterface $right): BinaryNodeInterface {
-    $this->right = $right;
-    return $this;
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public function setLeft(BinaryNodeInterface &$left): BinaryNodeInterface
+    {
+        $this->left = $left;
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRight(): ?BinaryNodeInterface
+    {
+        return $this->right;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setRight(BinaryNodeInterface &$right): BinaryNodeInterface
+    {
+        $this->right = $right;
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return (string)$this->val;
+    }
 }
