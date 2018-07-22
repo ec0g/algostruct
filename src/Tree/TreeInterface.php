@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @contains TreeInterface.php
  * User: goce
@@ -13,7 +14,25 @@ use AlgoStruct\Tree\Node\NodeInterface;
 
 interface TreeInterface {
 
-  public function add(NodeInterface $node);
+  /**
+   * @param \AlgoStruct\Tree\Node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function insert(NodeInterface $node): TreeInterface;
 
-  public function delete(NodeInterface $node);
+  /**
+   * @param \AlgoStruct\Tree\Node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function delete(NodeInterface $node): void;
+
+  /*
+  public function search();
+  public function min();
+  public function max();
+  public function predecessor();
+  public function successor();
+  */
 }

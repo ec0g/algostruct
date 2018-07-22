@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpunit boostrap="vendor/autoload.php"
+<phpunit bootstrap="vendor/autoload.php"
          backupGlobals="true"
          colors="true"
          verbose="true">
@@ -15,6 +15,6 @@
     </filter>
     <logging>
         <log type="coverage-clover" target="tests/_reports/logs/clover.xml"/>
-        <log type="coverage-html" target="tests/_reports/coverage" charset="UTF-8" yui="true" highlighted="true"/>
+        <log type="coverage-html" target="tests/_reports/coverage"/>
     </logging>
 </phpunit>
